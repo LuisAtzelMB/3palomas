@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { PDFDocument, rgb, PDFPage } from "pdf-lib";
+import { PDFDocument, rgb } from "pdf-lib";
 
 const PdfCheckmarkAdder = () => {
   const [inputFile, setInputFile] = useState<File | null>(null);
