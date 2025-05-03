@@ -19,7 +19,7 @@ const PdfCheckmarkAdder = () => {
       // Main diagonal line (larger)
       page.drawLine({
         start: { x: x, y: y },
-        end: { x: x - size * 0.845, y: y - size * 0.8 }, // Más larga
+        end: { x: x - size * 0.8, y: y - size * 0.8 }, // Más larga
         thickness: 1.8, // Un poco más gruesa
         color: rgb(1, 0, 0),
       });
