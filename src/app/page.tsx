@@ -107,7 +107,7 @@ const PdfCheckmarkAdder = () => {
     const nameWithoutExtension = originalName.substring(0, lastDotIndex);
     const extension = originalName.substring(lastDotIndex);
 
-    return `${nameWithoutExtension}_checkmarks${extension}`;
+    return `${nameWithoutExtension}_rv${extension}`;
   };
 
   return (
