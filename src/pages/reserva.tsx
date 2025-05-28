@@ -42,7 +42,6 @@ const PdfCheckmarkAdder = () => {
     return pdfBytes;
   };
 
-  // Resto del código permanece igual...
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setInputFile(e.target.files[0]);
@@ -92,6 +91,23 @@ const PdfCheckmarkAdder = () => {
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  // Función para generar el nombre del archivo con _checkmarks
+  const getOutputFileName = () => {
+    if (!inputFile) return "output_with_checks.pdf";
+
+    const originalName = inputFile.name;
+    const lastDotIndex = originalName.lastIndexOf(".");
+
+    if (lastDotIndex === -1) {
+      return `${originalName}_checkmarks`;
+    }
+
+    const nameWithoutExtension = originalName.substring(0, lastDotIndex);
+    const extension = originalName.substring(lastDotIndex);
+
+    return `${nameWithoutExtension}_rv${extension}`;
   };
 
   return (
@@ -152,7 +168,7 @@ const PdfCheckmarkAdder = () => {
           </p>
           <a
             href={outputFile}
-            download="output_with_checks.pdf"
+            download={getOutputFileName()}
             className="inline-block py-2 px-4 bg-green-600 text-white rounded-md hover:bg-green-700"
           >
             Download Modified PDF
