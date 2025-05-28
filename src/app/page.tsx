@@ -271,7 +271,7 @@ const PdfCheckmarkAdder = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-6 text-center">
-        Añade Checkmark's a tus PDF
+        Añade Checkmark a tus PDF
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
